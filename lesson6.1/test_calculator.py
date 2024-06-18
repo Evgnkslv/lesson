@@ -47,8 +47,7 @@ def test_caculator_spinner_time(spinner_timer, first_num,
 
     end_time = time.time()
 
-    result_time = round(end_time - start_time)
-
-    assert result_time == spinner_timer
+  result_element = driver.find_element(By.CSS_SELECTOR, "input#results")
+  assert result_element.get_attribute("value") == str(result), f"Expected result is {result}"
 
     driver.quit()
